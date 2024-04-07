@@ -1,8 +1,8 @@
 package gods_test
 
 import (
-	"testing"
 	"github.com/ParkerGits/gods"
+	"testing"
 )
 
 func TestQueue(t *testing.T) {
@@ -11,7 +11,7 @@ func TestQueue(t *testing.T) {
 	if queue.Len() != 0 {
 		t.Errorf("Length of empty queue should be 0")
 	}
-	
+
 	queue.Enqueue(4)
 	if queue.Len() != 1 {
 		t.Errorf("Length of queue after single push should be 1")
@@ -29,7 +29,7 @@ func TestQueue(t *testing.T) {
 	}
 
 	popped := queue.Dequeue()
-	if popped!= 4 {
+	if popped != 4 {
 		t.Errorf("First element popped should be first element pushed (4)")
 	}
 	if queue.Len() != 1 {

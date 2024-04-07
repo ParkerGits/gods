@@ -2,12 +2,12 @@ package gods
 
 type StackNode[T any] struct {
 	value T
-	next *StackNode[T]
+	next  *StackNode[T]
 }
 
 type Stack[T any] struct {
 	length int
-	head *StackNode[T]
+	head   *StackNode[T]
 }
 
 func NewStack[T any]() *Stack[T] {
@@ -47,12 +47,12 @@ func (stack *Stack[T]) Len() int {
 	return stack.length
 }
 
-func (stack *Stack[T]) Elements() *[]T {
+func (stack *Stack[T]) Elements() []T {
 	elements := make([]T, stack.length)
 	i := 0
 	for tmp := stack.head; tmp != nil; tmp = tmp.next {
 		elements[i] = tmp.value
 		i++
 	}
-	return &elements
+	return elements
 }
